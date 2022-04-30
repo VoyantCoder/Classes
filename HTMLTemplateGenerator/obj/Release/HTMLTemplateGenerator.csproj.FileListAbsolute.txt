@@ -1,0 +1,10 @@
+F:\Programming\Classes\HTMLTemplateGenerator\app\HTMLTemplateGenerator.exe.config
+F:\Programming\Classes\HTMLTemplateGenerator\app\HTMLTemplateGenerator.exe
+F:\Programming\Classes\HTMLTemplateGenerator\app\HTMLTemplateGenerator.pdb
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.csproj.AssemblyReference.cache
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.csproj.SuggestedBindingRedirects.cache
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.csproj.CoreCompileInputs.cache
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.exe
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.pdb
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.Properties.Resources.resources
+F:\Programming\Classes\HTMLTemplateGenerator\obj\Release\HTMLTemplateGenerator.csproj.GenerateResource.cache

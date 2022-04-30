@@ -1,0 +1,12 @@
+<!--ELEMENTS WILL BE GENERATED DURING RUNTIME TOO-->
+<!DOCTYPE html>
+<html>
+	<body>
+		<h2>
+			%h2title%
+		</h2>
+		%h4summary%
+		%pdescription%
+		%plastwords%
+	</body>
+</html>
