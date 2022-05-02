@@ -112,6 +112,7 @@ namespace HTMLTemplateGenerator
                 HTMLGenType.PTableDescription => GenTableDescription(),
                 HTMLGenType.TableRows => GenTableRows(),
                 HTMLGenType.TableColumns => GenTableColumns(),
+                _ => null
             };
         }
     }
@@ -119,23 +120,24 @@ namespace HTMLTemplateGenerator
     public class HTML
     {
         public string Source { get; set; } = string.Empty;
-        public void SetSource(StringBuilder builder) => Source = builder.ToString();
+        public void SetSource(StringBuilder source) => Source = source.ToString();
+        public HTML(StringBuilder source) => SetSource(source);
     }
     
     public partial class HTMLTemplates
     {
-        public HTML GenerateREADME1(string h2Title, string[] h4Summary, string[] pDescription, string[] pLastWords)
+        public HTML GenerateREADME1(string h2Title, string h4Summary, string pDescription, string pLastWords)
         {
             // Information based README
 
-            return new HTML();
+            return new HTML(new(""));
         }
 
-        public HTML GenerateREADME2(string h2Title, string[] h4Summary, string[] pTableDescription, string[] tableRows, string[] tableColumns, string[] pLastWords)
+        public HTML GenerateREADME2(string h2Title, string h4Summary, string pTableDescription, string tableRows, string tableColumns, string pLastWords)
         {
             // Table based README
 
-            return new HTML();
+            return new HTML(new(""));
         }
     }
 
@@ -149,50 +151,26 @@ namespace HTMLTemplateGenerator
                 // TITLE
                 HTMLParser.Generate(HTMLGenType.H2Title, ""),
                 // SUMMARY
-                new string[] 
-                { 
-                    HTMLParser.Generate(HTMLGenType.H4Summary, "")
-                },
+                HTMLParser.Generate(HTMLGenType.H4Summary, ""),
                 // DESCRIPTION
-                new string[] 
-                { 
-                    HTMLParser.Generate(HTMLGenType.PDescription, "")
-                },
+                HTMLParser.Generate(HTMLGenType.PDescription, ""),
                 // LAST WORDS
-                new string[] 
-                {
-                    HTMLParser.Generate(HTMLGenType.PLastWords, "")
-                }
+                HTMLParser.Generate(HTMLGenType.PLastWords, "")
             ).Source;
 
             string html2 = t.GenerateREADME2(
                 // TITLE
                 HTMLParser.Generate(HTMLGenType.H2Title, ""),
                 // SUMMARY
-                new string[] 
-                { 
-                    HTMLParser.Generate(HTMLGenType.H4Summary, "")
-                },
+                HTMLParser.Generate(HTMLGenType.H4Summary, ""),
                 // TABLE DESCRIPTION
-                new string[] 
-                { 
-                    HTMLParser.Generate(HTMLGenType.PTableDescription, "")
-                },
+                HTMLParser.Generate(HTMLGenType.PTableDescription, ""),
                 // TABLE ROWS
-                new string[] 
-                {
-                    HTMLParser.Generate(HTMLGenType.TableRows, "")
-                },
+                HTMLParser.Generate(HTMLGenType.TableRows, ""),
                 // TABLE COLUMNS
-                new string[] 
-                {
-                    HTMLParser.Generate(HTMLGenType.TableColumns, "")
-                },
+                HTMLParser.Generate(HTMLGenType.TableColumns, ""),
                 // LAST WORDS
-                new string[] 
-                {
-                    HTMLParser.Generate(HTMLGenType.PLastWords, "")
-                }
+                HTMLParser.Generate(HTMLGenType.PLastWords, "")
             ).Source;
 
             if (!File.Exists("html1.html"))
