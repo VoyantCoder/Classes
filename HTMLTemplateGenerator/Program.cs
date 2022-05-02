@@ -18,106 +18,91 @@ namespace HTMLTemplateGenerator
 
     public class HTMLParser
     {
-        private static string[] GenTitle(string content) 
+        private static string GenTitle() 
         {
-            return new string[]
-            {
-                $"{content}"
-            };
+            return $@"{(contents.Length > 0 ? contents[0] : "none")}";
         }
         
-        private static string[] GenSummary(string[] contents) 
+        private static string GenSummary() 
         {
-            return new string[]
-            {
-                $"<h4>",
-                $"  {string.Join("\r\n", contents)}",
-                $"</h4>",
-            };
+            // <h4>
+            //      Text
+            // </h4>
+            // <h4>
+            //      More text
+            // </h4>
+            return string.Empty;
         }
         
-        private static string[] GenDescription(string[] contents) 
+        private static string GenDescription() 
         {
-            if (contents.Length > 0)
-            {
-                contents[0] = "<p>\r\n    ";
+            // </br>
+            // <p>
+            //  <b> 
+            //      Description
+            //  </b>
+            // </p>
+            // <p>
+            //      Text
+            // </p>
+            // <p>
+            //      More text
+            // </p>
+            return string.Empty;
+        }
+        
+        private static string GenLastWords() 
+        {
+            // <p>
+            //      Last Words
+            // </p>
+            // <p>
+            //      More words;l
+            // </p>
+            return string.Empty;
+        }
+        
+        private static string GenTableDescription() 
+        {
+            // <p> 
+            //      Text
+            // </p>
+            return string.Empty;
+        }
+        
+        private static string GenTableRows()
+        {
+            // <table>
+            //  <tr>
+            //      <th> Row1 </th>
+            //      <th> Row2 </th>
+            //      <th> Row3 </th>
+            //  </tr>
+            // </table>
+            return string.Empty;
+        }
 
-                contents = contents.Select
-                (
-                    a => "    " + a
-                    .Replace
-                    (
-                        " ", "</br></br>"
-                    )
-                    .Replace
-                    (
-                        "\r\n", "</br></br>"
-                    )
-                )
-                .Append
-                (
-                    "</p>"
-                ).ToArray();
+        private static string GenTableColumns()
+        {
+            // <tr>
+            //      <td> Row1 </td> 
+            //      <td> Row2 </td>
+            //      <td> Row3 </td>
+            // </tr>
+            return string.Empty;
+        }
+
+        private static string[] contents = null;
+
+        public static string Generate(HTMLGenType type, params string[] text)
+        {
+            contents = text;
+
+            if (contents.Length < 1)
+            {
+                return null;
             }
 
-            return contents;
-        }
-        
-        private static string[] GenLastWords(string[] contents) 
-        {
-            if (contents.Length > 0)
-            {
-                contents[0] = "<p>\r\n    ";
-
-                contents = contents.Select
-                (
-                    a => "    " + a
-                    .Replace
-                    (
-                        "\r\n", "</br></br>"
-                    )
-                )
-                .Append
-                (
-                    "</p>"
-                ).ToArray();
-            }
-
-            return contents;
-        }
-        
-        private static string[] GenTableDescription(string[] contents) 
-        {
-            return new string[]
-            {
-                "<p>",
-                string.Join("\r\n", contents)
-                    .Replace
-                    (
-                        "\r\n", "</br></br>"
-                    ),
-                "</p>"
-            };
-        }
-        
-        private static string[] GenTableRows(string[] contents)
-        {
-            return new string[]
-            {
-
-            };
-        }
-
-        private static string[] GenTableColumns(string[] contents)
-        {
-            return new string[]
-            {
-
-            };
-        }
-
-        public static string[] Generate(HTMLGenType type, params string[] contents)
-        {
             return type switch
             {
                 HTMLGenType.H2Title => GenTitle(),
@@ -162,28 +147,52 @@ namespace HTMLTemplateGenerator
 
             string html1 = t.GenerateREADME1(
                 // TITLE
-                "",
+                HTMLParser.Generate(HTMLGenType.H2Title, ""),
                 // SUMMARY
-                new string[] { },
+                new string[] 
+                { 
+                    HTMLParser.Generate(HTMLGenType.H4Summary, "")
+                },
                 // DESCRIPTION
-                new string[] { },
+                new string[] 
+                { 
+                    HTMLParser.Generate(HTMLGenType.PDescription, "")
+                },
                 // LAST WORDS
-                new string[] { }
+                new string[] 
+                {
+                    HTMLParser.Generate(HTMLGenType.PLastWords, "")
+                }
             ).Source;
 
             string html2 = t.GenerateREADME2(
                 // TITLE
-                "",
+                HTMLParser.Generate(HTMLGenType.H2Title, ""),
                 // SUMMARY
-                new string[] { },
+                new string[] 
+                { 
+                    HTMLParser.Generate(HTMLGenType.H4Summary, "")
+                },
                 // TABLE DESCRIPTION
-                new string[] { },
+                new string[] 
+                { 
+                    HTMLParser.Generate(HTMLGenType.PTableDescription, "")
+                },
                 // TABLE ROWS
-                new string[] { },
+                new string[] 
+                {
+                    HTMLParser.Generate(HTMLGenType.TableRows, "")
+                },
                 // TABLE COLUMNS
-                new string[] { },
+                new string[] 
+                {
+                    HTMLParser.Generate(HTMLGenType.TableColumns, "")
+                },
                 // LAST WORDS
-                new string[] { }
+                new string[] 
+                {
+                    HTMLParser.Generate(HTMLGenType.PLastWords, "")
+                }
             ).Source;
 
             if (!File.Exists("html1.html"))
