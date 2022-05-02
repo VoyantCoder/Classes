@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.H2Title.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.H4Summary.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.PDescription.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.PLastWords.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.PTableDesc.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.Strings.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.TableColumns.cs" />
+    <Compile Include="HTMLTempler\Parser\Generator\Parser.Generator.TableRows.cs" />
+    <Compile Include="HTMLTempler\Parser\HTMLTempler.Parser.Generator.cs" />
+    <Compile Include="HTMLTempler\Parser\HTMLTempler.Parser.ParseType.cs" />
+    <Compile Include="HTMLTempler\Templater\HTMLTempler.Templater.Construction.cs" />
+    <Compile Include="HTMLTempler\Templater\HTMLTempler.Templater.HTML.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -67,5 +79,6 @@
   <ItemGroup>
     <None Include="Resources\Templates.README.2.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
