@@ -46,6 +46,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Albums.cs" />
+    <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.CreateAlbum.cs" />
+    <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Enums.cs" />
+    <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Workspaces.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\App.config" />
