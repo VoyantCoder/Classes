@@ -9,3 +9,6 @@ HTMLTemplateGenerator/obj/Release/HTMLTemplateGenerator.csproj.FileListAbsolute.
 VideoHelper/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
 VideoHelper/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
 VideoHelper/.vs/VideoHelper/v17/.suo
+VideoHelper/obj/Release/VideoHelper.csproj.FileListAbsolute.txt
+VideoHelper/obj/Release/VideoHelper.exe
+VideoHelper/obj/Release/VideoHelper.pdb
