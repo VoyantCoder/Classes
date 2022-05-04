@@ -49,6 +49,7 @@
     <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Albums.cs" />
     <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.CreateAlbum.cs" />
     <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Enums.cs" />
+    <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.RenameAlbum.cs" />
     <Compile Include="VideoHelperAPI\Modules\VideoHelperAPI.Modules.Workspaces.cs" />
   </ItemGroup>
   <ItemGroup>
