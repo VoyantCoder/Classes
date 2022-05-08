@@ -14,6 +14,7 @@ namespace VideoHelper
         
         Success,
         
-        AlbumDoesNotExist, AlbumAlreadyExists, AlbumRenameFailed
+        AlbumDoesNotExist, AlbumAlreadyExists, AlbumRenameFailed, AlbumDeletionFailed, 
+        UnableToMoveRendered, RenderedCleanupFailed, UnableToRemoveTrash, TrashRemovealFailed
     }
 }

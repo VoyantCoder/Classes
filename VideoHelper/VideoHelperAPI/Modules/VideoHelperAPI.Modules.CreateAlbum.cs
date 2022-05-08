@@ -9,13 +9,18 @@ namespace VideoHelper
 {
     public partial class VideoHelperAPI
     {
-        public VideoHelperResult CreateAlbum(string name, string workspace)
+        public VideoHelperResult CreateAlbum(string workspace, string name)
         {
             try
             {
-                if (!ValidateWorkspace(workspace) || AlbumExists(name))
+                if (!ValidateWorkspace(workspace))
                 {
                     return VideoHelperResult.WorkspaceIsInvalid;
+                }
+
+                else if (AlbumExists(name))
+                {
+                    return VideoHelperResult.AlbumAlreadyExists;
                 }
 
                 var paths = new[]

@@ -10,7 +10,7 @@ namespace VideoHelper
     public partial class VideoHelperAPI
     {
         public VideoHelperResult RenameAlbum(string workspace, string album, string newName)
-        {// LEFT OFF AT EXPLANATION WHAT YOU ADDED (RenameAlbum and Additionalities)
+        {
             try
             {
                 if (!ValidateWorkspace(workspace))
