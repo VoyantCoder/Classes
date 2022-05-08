@@ -2,17 +2,28 @@
 // Author: Dashie
 
 
+using static System.Console;
+using static System.IO.Directory;
+
+
 namespace VideoHelper
 {
-    internal class Program
+    public partial class VideoHelperAPI
+    {
+
+    }
+
+    public class Program
     {
         static void Main(string[] args)
         {
-            // A class/program to help me with managing video related shits because I have so much shit to upload.
-            int value = args switch
-            {
-                null => 0//C# latest test
-            };
+            VideoHelperAPI api = new();
+
+            WriteLine(string.Join(", ", api.ListAlbums(".")));
+
+            WriteLine(api.RenameAlbum("./", "dashieee", "DaShIeEBanschee"));
+
+            WriteLine(string.Join(", ", api.ListAlbums(".")));
         }
     }
 }
