@@ -1,8 +1,0 @@
-F:\Programming\Classes\VideoHelper\app\VideoHelper.exe.config
-F:\Programming\Classes\VideoHelper\app\VideoHelper.exe
-F:\Programming\Classes\VideoHelper\app\VideoHelper.pdb
-F:\Programming\Classes\VideoHelper\obj\Release\VideoHelper.csproj.AssemblyReference.cache
-F:\Programming\Classes\VideoHelper\obj\Release\VideoHelper.csproj.SuggestedBindingRedirects.cache
-F:\Programming\Classes\VideoHelper\obj\Release\VideoHelper.csproj.CoreCompileInputs.cache
-F:\Programming\Classes\VideoHelper\obj\Release\VideoHelper.exe
-F:\Programming\Classes\VideoHelper\obj\Release\VideoHelper.pdb
