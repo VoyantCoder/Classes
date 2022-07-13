@@ -17,3 +17,10 @@ VideoHelper/app/VideoHelper.exe.config
 .vs/
 .vs
 .vs/*
+URLOpener/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+URLOpener/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+URLOpener/obj/Release/URLOpener.csproj.FileListAbsolute.txt
+URLOpener/app/URLOpener.pdb
+URLOpener/app/URLOpener.exe.config
+URLOpener/obj/Release/URLOpener.pdb
+URLOpener/obj/Release/URLOpener.exe
